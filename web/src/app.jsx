@@ -173,7 +173,7 @@ function App() {
   const t = translations[lang];
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/profile')
+    fetch('/api/profile')
       .then(res => res.json())
       .then(d => setData(d))
       .catch(err => console.error("Erro API:", err));
