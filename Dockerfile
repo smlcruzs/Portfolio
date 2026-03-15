@@ -22,6 +22,6 @@ COPY api/ .
 
 COPY --from=frontend-builder /web/dist ./web/dist
 
-EXPOSE 3001
+EXPOSE 80
 
 CMD ["node", "src/server.js"]
