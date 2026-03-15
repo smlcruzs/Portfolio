@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html {
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
+html::-webkit-scrollbar {
   display: none;
 }
 
