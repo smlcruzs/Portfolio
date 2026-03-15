@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Star, MessageSquare, Send, Calendar, CheckCircle } from 'lucide-react';
 
 // Usa variável de ambiente se existir, senão cai no localhost para dev
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 const casesData = [
   {
