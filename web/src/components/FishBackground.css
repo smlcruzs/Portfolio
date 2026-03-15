@@ -1,15 +1,13 @@
 /* CONTAINER PRINCIPAL (O MAR) */
 .fish-background-container {
-  position: absolute; /* Absolute para pegar o scroll todo */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Altura total do conteúdo do site */
+  height: 100%;
   min-height: 100vh;
   z-index: -1;
   overflow: hidden;
-  
-  /* SUAS CORES (NÃO ALTERADAS) */
   background-image: linear-gradient(
     180deg, 
     #57e9ff 0%, 
@@ -50,9 +48,9 @@
   50% { transform: rotate(2deg); }
 }
 
-/* --- BOLHAS GLOBAIS (REPLICAÇÃO EXATA) --- */
+/* --- BOLHAS GLOBAIS ORIGINAIS --- */
 .bubbles {
-  position: absolute; /* Ocupa todo o container do mar */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -65,28 +63,75 @@
   height: 50px;
   border-radius: 100%;
   position: absolute;
-  background-color: rgba(179, 18, 18, 0.1); /* Bolha branca translúcida */
-  bottom: -10%; /* Começa abaixo do site */
+  background-color: rgba(179, 18, 18, 0.1);
+  bottom: -10%;
   animation: bubble 10s ease-in-out infinite;
 }
 
 @keyframes bubble {
-  0% { bottom: -10%; opacity: 0; }
-  20% { opacity: 0.5; } /* Aparece rápido */
-  80% { opacity: 0.5; }
-  100% { bottom: 100%; opacity: 0; } /* Vai até o topo absoluto */
+  0%   { bottom: -10%; opacity: 0; }
+  20%  { opacity: 0.5; }
+  80%  { opacity: 0.5; }
+  100% { bottom: 100%; opacity: 0; }
 }
 
-/* Configurações individuais (Copiado do seu código) */
-.bubbles span:nth-child(1) { width: 50px; height: 50px; opacity: 0.5; left: 10%; animation-delay: 0s; animation-duration: 15s; }
-.bubbles span:nth-child(2) { width: 30px; height: 30px; opacity: 0.5; left: 40%; animation-delay: 2s; animation-duration: 10s; }
-.bubbles span:nth-child(3) { width: 10px; height: 10px; opacity: 0.5; left: 30%; animation-delay: 4s; animation-duration: 20s; }
-.bubbles span:nth-child(4) { width: 35px; height: 35px; opacity: 0.5; left: 40%; animation-delay: 6s; animation-duration: 12s; }
-.bubbles span:nth-child(5) { width: 45px; height: 45px; opacity: 0.5; left: 60%; animation-delay: 8s; animation-duration: 18s; }
-.bubbles span:nth-child(6) { width: 40px; height: 40px; opacity: 0.5; left: 80%; animation-delay: 1s; animation-duration: 25s; }
-.bubbles span:nth-child(7) { width: 15px; height: 15px; opacity: 0.5; left: 90%; animation-delay: 5s; animation-duration: 22s; }
-.bubbles span:nth-child(8) { width: 20px; height: 20px; opacity: 0.5; left: 50%; animation-delay: 3s; animation-duration: 14s; }
+/* Bolhas originais */
+.bubbles span:nth-child(1) { width: 50px; height: 50px; opacity: 0.5; left: 10%; animation-delay: 0s;  animation-duration: 15s; }
+.bubbles span:nth-child(2) { width: 30px; height: 30px; opacity: 0.5; left: 40%; animation-delay: 2s;  animation-duration: 10s; }
+.bubbles span:nth-child(3) { width: 10px; height: 10px; opacity: 0.5; left: 30%; animation-delay: 4s;  animation-duration: 20s; }
+.bubbles span:nth-child(4) { width: 35px; height: 35px; opacity: 0.5; left: 40%; animation-delay: 6s;  animation-duration: 12s; }
+.bubbles span:nth-child(5) { width: 45px; height: 45px; opacity: 0.5; left: 60%; animation-delay: 8s;  animation-duration: 18s; }
+.bubbles span:nth-child(6) { width: 40px; height: 40px; opacity: 0.5; left: 80%; animation-delay: 1s;  animation-duration: 25s; }
+.bubbles span:nth-child(7) { width: 15px; height: 15px; opacity: 0.5; left: 90%; animation-delay: 5s;  animation-duration: 22s; }
+.bubbles span:nth-child(8) { width: 20px; height: 20px; opacity: 0.5; left: 50%; animation-delay: 3s;  animation-duration: 14s; }
 
+/* --- BOLHAS BONITAS SUBINDO --- */
+.bubbles span:nth-child(n+9) {
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(150, 230, 255, 0.18) 40%,
+    rgba(100, 200, 255, 0.08) 70%,
+    transparent 100%
+  );
+  border: 1.5px solid rgba(180, 240, 255, 0.45);
+  box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -1px -1px 3px rgba(100, 200, 255, 0.2),
+    0 0 6px rgba(100, 220, 255, 0.15);
+  animation-name: bubble-rise;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes bubble-rise {
+  0%   { bottom: -5%;  opacity: 0;   transform: translateX(0px); }
+  8%   { opacity: 0.85; }
+  25%  { transform: translateX(7px); }
+  50%  { transform: translateX(-6px); opacity: 0.8; }
+  75%  { transform: translateX(5px); opacity: 0.5; }
+  88%  { opacity: 0; }
+  100% { bottom: 75%;  opacity: 0;   transform: translateX(-4px); }
+}
+
+/* Cada bolha com tamanho, posição e velocidade única — todas bem lentas */
+.bubbles span:nth-child(9)  { width: 14px; height: 14px; left: 5%;   animation-delay: 0s;    animation-duration: 22s; }
+.bubbles span:nth-child(10) { width: 9px;  height: 9px;  left: 14%;  animation-delay: 3s;    animation-duration: 28s; }
+.bubbles span:nth-child(11) { width: 18px; height: 18px; left: 22%;  animation-delay: 7s;    animation-duration: 25s; }
+.bubbles span:nth-child(12) { width: 11px; height: 11px; left: 32%;  animation-delay: 1.5s;  animation-duration: 32s; }
+.bubbles span:nth-child(13) { width: 20px; height: 20px; left: 43%;  animation-delay: 5s;    animation-duration: 27s; }
+.bubbles span:nth-child(14) { width: 13px; height: 13px; left: 54%;  animation-delay: 9s;    animation-duration: 30s; }
+.bubbles span:nth-child(15) { width: 16px; height: 16px; left: 63%;  animation-delay: 2.5s;  animation-duration: 24s; }
+.bubbles span:nth-child(16) { width: 9px;  height: 9px;  left: 71%;  animation-delay: 6s;    animation-duration: 35s; }
+.bubbles span:nth-child(17) { width: 19px; height: 19px; left: 80%;  animation-delay: 0.5s;  animation-duration: 26s; }
+.bubbles span:nth-child(18) { width: 11px; height: 11px; left: 90%;  animation-delay: 4s;    animation-duration: 29s; }
+.bubbles span:nth-child(19) { width: 15px; height: 15px; left: 18%;  animation-delay: 11s;   animation-duration: 33s; }
+.bubbles span:nth-child(20) { width: 10px; height: 10px; left: 37%;  animation-delay: 14s;   animation-duration: 28s; }
+.bubbles span:nth-child(21) { width: 17px; height: 17px; left: 67%;  animation-delay: 8s;    animation-duration: 31s; }
+.bubbles span:nth-child(22) { width: 12px; height: 12px; left: 47%;  animation-delay: 16s;   animation-duration: 24s; }
+.bubbles span:nth-child(23) { width: 8px;  height: 8px;  left: 77%;  animation-delay: 2s;    animation-duration: 36s; }
+.bubbles span:nth-child(24) { width: 16px; height: 16px; left: 9%;   animation-delay: 13s;   animation-duration: 27s; }
+.bubbles span:nth-child(25) { width: 10px; height: 10px; left: 57%;  animation-delay: 10s;   animation-duration: 30s; }
+.bubbles span:nth-child(26) { width: 14px; height: 14px; left: 86%;  animation-delay: 5.5s;  animation-duration: 23s; }
 
 /* --- PEIXE --- */
 .fish {
@@ -95,8 +140,7 @@
   border-radius: 100%;
   background-color: orange;
   position: absolute;
-  /* Ajustei o TOP para ele ficar na superfície (área clara) */
-  top: 150px; 
+  top: 150px;
   left: 50%;
   box-shadow: inset 0px -6px 0px rgba(0, 0, 0, 0.1);
   animation: fish 40s ease-in infinite;
@@ -104,12 +148,11 @@
 }
 
 @keyframes fish {
-  0% { left: 110%; top: 200px; }
-  50% { top: 150px; }
+  0%   { left: 110%; top: 200px; }
+  50%  { top: 150px; }
   100% { left: -20%; top: 200px; }
 }
 
-/* Cauda */
 .fish::after, .fish::before {
   width: 50px; height: 50px; border-radius: 10px; background-color: inherit;
   content: ''; position: absolute; top: 30%; right: -20px;
@@ -118,10 +161,8 @@
 .fish::before { top: 42%; transform: rotate(20deg); }
 @keyframes tail { 0%, 100% { right: -20px; } 50% { right: -10px; } }
 
-/* Elementos internos */
 .fish span { position: absolute; content: ''; }
 
-/* Olhos */
 .fish span:nth-child(1), .fish span:nth-child(2) {
   border-radius: 100%; width: 30px; height: 30px; background-color: white;
   box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.1); top: 20px; z-index: 2;
@@ -133,7 +174,6 @@
 }
 @keyframes eyes { 0%, 100% { top: 4px; } 50% { top: 10px; } }
 
-/* Boca */
 .fish span:nth-child(3) {
   border-radius: 100%; width: 25px; height: 15px; background-color: brown;
   box-shadow: inset 0px -5px 0px rgba(0, 0, 0, 0.3); top: 50px; left: -5px;
@@ -141,17 +181,16 @@
 }
 @keyframes mouth { 0%, 100% { height: 25px; width: 15px; } 50% { height: 15px; width: 8px; } }
 
-/* BOLHAS DA BOCA DO PEIXE (IMPORTANTE: São spans 4, 5 e 6) */
 .fish span:nth-child(4), .fish span:nth-child(5), .fish span:nth-child(6) {
   border-radius: 100%; width: 30px; height: 30px; background-color: white;
   box-shadow: inset 0px 5px 0px rgba(0, 0, 0, 0.3); top: 20px; left: -30px;
   z-index: 2; opacity: 0.3; animation: fishbubbles 4s ease infinite;
 }
 .fish span:nth-child(5) { animation-delay: 0.5s; width: 20px; height: 20px; }
-.fish span:nth-child(6) { animation-delay: 1s; width: 10px; height: 10px; }
+.fish span:nth-child(6) { animation-delay: 1s;   width: 10px; height: 10px; }
 
 @keyframes fishbubbles {
-  0% { width: 0; height: 0; top: 70px; left: 2px; }
-  50% { left: -20px; }
+  0%   { width: 0;  height: 0;  top: 70px; left: 2px; }
+  50%  { left: -20px; }
   100% { top: -80px; opacity: 0; }
 }
