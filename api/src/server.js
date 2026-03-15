@@ -18,8 +18,7 @@ app.get('/api/profile', (req, res) => {
 app.post('/api/feedback', feedbackHandler);
 
 // --- SERVE O FRONTEND (React buildado) ---
-// O build do React vai ficar em ../web/dist
-const frontendPath = path.join(__dirname, '..', '..', 'web', 'dist');
+const frontendPath = path.join(__dirname, '..', 'web', 'dist');
 app.use(express.static(frontendPath));
 
 // Qualquer rota que não seja /api/* serve o index.html do React
