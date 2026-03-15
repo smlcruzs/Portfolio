@@ -1,21 +1,31 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const profileData = require('./data/profileData');
 const feedbackHandler = require('./api/feedback');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
 
-// Rota do perfil
+// --- ROTAS DA API ---
 app.get('/api/profile', (req, res) => {
   res.json(profileData);
 });
 
-// Rota do feedback (Google Sheets)
 app.post('/api/feedback', feedbackHandler);
+
+// --- SERVE O FRONTEND (React buildado) ---
+// O build do React vai ficar em ../web/dist
+const frontendPath = path.join(__dirname, '..', '..', 'web', 'dist');
+app.use(express.static(frontendPath));
+
+// Qualquer rota que não seja /api/* serve o index.html do React
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendPath, 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
