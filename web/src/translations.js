@@ -9,8 +9,7 @@ export const translations = {
 
     // Sobre Mim
     about:                "Sobre Mim",
-    aboutText:            "Desenvolvedor com 4 anos de experiência em software, análise de dados, RPA/web scraping e IA (LLM/RAG). Já construí sistemas de geração de treino, monitoramento de colaboradores e 30+ APIs funcionais e escaláveis na AWS — otimizando múltiplos setores da maior rede de academias do Nordeste. Atuo com responsabilidade, arquitetura limpa, integrações robustas e entrega contínua.",
-
+    aboutText:            "Engenheiro de Software e graduando em Ciência da Computação, focado na convergência entre desenvolvimento web, IA e Automação. Atuo na construção de soluções escaláveis, desde interfaces dinâmicas até back-ends robustos, integrando inteligência artificial para otimizar processos de negócio e eliminar tarefas repetitivas. Tenho forte capacidade de análise crítica e resolução de problemas complexos, comunicação clara com times multidisciplinares e comprometimento com entrega contínua de valor. Acredito que arquitetura bem pensada é o que diferencia um sistema que funciona de um sistema que escala.",
     // Projetos
     projects:             "Projetos Recentes",
     subProjects:          "Mergulhe nos detalhes do que tenho construído.",
@@ -104,8 +103,8 @@ export const translations = {
 
     // About
     about:                "About Me",
-    aboutText:            "Developer with 4 years of experience in software, data analysis, RPA/web scraping and AI (LLM/RAG). I've built training generation systems, employee monitoring tools and 30+ functional, scalable APIs on AWS — optimizing multiple sectors of the largest gym network in Northeast Brazil. I work with clean architecture, robust integrations and continuous delivery.",
-
+    aboutText:            "Software Engineer and Computer Science undergraduate, focused on the convergence of web development, AI and Automation. I build scalable solutions — from dynamic interfaces to robust back-ends — integrating artificial intelligence to optimize business processes and eliminate repetitive tasks. I bring strong analytical thinking, clear communication across multidisciplinary teams, and a commitment to continuously delivering value. I believe well-thought-out architecture is what separates a system that works from a system that scales.",
+    
     // Projects
     projects:             "Recent Projects",
     subProjects:          "Dive into the details of what I've been building.",

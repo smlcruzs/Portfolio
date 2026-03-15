@@ -267,7 +267,7 @@ function App() {
                 <a href="#projects" className="bg-ocean-cyan/10 text-ocean-cyan px-8 py-4 rounded border border-ocean-cyan hover:bg-ocean-cyan hover:text-ocean-deep transition-all font-mono font-bold">
                   {t.btnProject}
                 </a>
-                <a href="/curriculo.pdf" download className="flex items-center gap-2 text-ocean-white px-8 py-4 rounded border border-ocean-surface hover:border-ocean-cyan transition-all font-mono">
+                <a href="/CurriculoSamuelCruzSE.pdf" download className="flex items-center gap-2 text-ocean-white px-8 py-4 rounded border border-ocean-surface hover:border-ocean-cyan transition-all font-mono">
                   <Download size={20} /> {t.btnCv}
                 </a>
               </div>
@@ -426,7 +426,7 @@ function App() {
           <section className="py-24 text-center">
             <h2 className="text-5xl font-bold text-ocean-white mb-8">{t.finalization}</h2>
             <p className="text-ocean-slate text-xl max-w-2xl mx-auto mb-12">{t.finalizationDesc}</p>
-            <a href="mailto:email@exemplo.com" className="inline-flex items-center gap-3 bg-ocean-deep border border-ocean-cyan text-ocean-cyan px-10 py-5 rounded hover:bg-ocean-cyan/10 transition-all font-mono font-bold text-xl">
+            <a href="https://wa.me/5571981895293" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-ocean-deep border border-ocean-cyan text-ocean-cyan px-10 py-5 rounded hover:bg-ocean-cyan/10 transition-all font-mono font-bold text-xl">
               <Send size={24} /> {t.contactBtn}
             </a>
           </section>
