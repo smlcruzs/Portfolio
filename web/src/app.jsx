@@ -112,7 +112,7 @@ const projectsList = [
     descriptionPt: "Infraestrutura de Backend completa para gestão de acervos bibliotecários. API RESTful com arquitetura limpa cobrindo cadastro de livros, controle de estoque, gestão de empréstimos e autenticação de usuários.",
     stack: ["Python", "Django REST", "Swagger", "SQLite"],
     image: "https://placehold.co/800x450/112240/64ffda?text=REST+API+Architecture&font=roboto",
-    link: "#",
+    link: "https://projects-biblioteca-api.teq4ty.easypanel.host/",
     github: "https://github.com/smlcruzs/biblioteca-api",
     status: "done"
   },
