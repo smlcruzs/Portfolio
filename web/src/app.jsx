@@ -116,7 +116,7 @@ const projectsList = [
     github: "https://github.com/smlcruzs/biblioteca-api",
     status: "done"
   },
-  {
+  { 
     id: 3,
     title: "PDF Conversion Tool",
     titlePt: "PDF Conversion Tool",
