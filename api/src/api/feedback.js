@@ -1,8 +1,8 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 
-const SHEET_ID     = '1tO-2qOgC6frN51SdJx6WQ-FlO1CJvwR5VfG0cI3AguQ';
-const CLIENT_EMAIL = 'treinook@my-project-1-443713.iam.gserviceaccount.com';
-const PRIVATE_KEY  = `-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAxN0SV+X6+NmQ\ncuKZDWHJNinIzknLxpleW9rzyCCXqL4MCf0TfEC87xvAtdp4LBXGjxDQRRiv/+fE\nX9uOAZGo08cAnFk/Zjx7YGoZ7Bhxubr3qcn/NiYeTyQ9odZX9M46o1KFpVGqGzyz\nqrRLe7drvojNVzR3tOOAVGmDfPJuqoQIbbtY53Oznct7Hnq1bsa2BeriIDhckL3Z\nwB39jSrXHWGH17/CLHvsYkt2B5Da6sx1KcyiYrysB05jH1WFR1cSG0QL5x9qNu4g\nKvhw/M65jfxaEtHNcm3dQ1XCiwsB0/ynOx5HvH3SabYq/A/Ll0DW5GtUAW9eYYCr\nDo4DEYmfAgMBAAECggEAF7fBGZIuDkCTCEZSYhF28BpVbssO4l8nnKgBmxALDo3p\nADM0a7LUhkqHKCFX5YRLE5ijsXRm8rSyUAOZUHIZ+WNBL26NPpM2Ktn0hAb8BPYc\nrn86BsgjTYRgSaMBa+YHf8h7jU0HbL4YLGT69PSeX0fcriMmJfpgKXh5WP/FFl92\n0In+hAEE/SZpGx3PzdFwKuRWB3NmH8U2wBs5pQ2sX/sc3tp7jf1w3WdWLuazcSxu\nYTxgaOi04oYVlxMhyNsl3wO/bdPqnB0Yhsk/wlG3qPSA+7XI/8mDeFnu7UXNBKHS\ngh7F0vxPhtOvDppnkwREZcuOsRFM9aNd4nAp/SleEQKBgQDo1JNaqbG2S+tEk9U/\n/gt6BIl/QYKVUqxdH+wp3+IvqW0INR3wbkhkiqzuJeotvqBBrzxmFVmcX2w6kVc9\n6iUD+Zdi9FqZJlrf2+3FBjFwk/Dn8W8E9ZTr1+/t2kuY7ph8EWbzcxwjT8qs8t9Y\ncZYIUSSR1y7KL6vdJsnxwxXyLwKBgQDT87ZXioIUAhth6or3U7012yOn0AB/bYnQ\n5bRXKSqcQ09ErBHBN3Hl/Jm9sTxQjstbn0AJN/aTdTJSPzGstfqqBEGTSoZ2a/+X\n2asMKJm/DV5pP5znej1xMtsCNjrE+KYHOvkTfNKwiv77bnM5UIRj75UyUITMXIcE\nHbx+PNwzkQKBgG1E3obtHucECD0d+DXZHz+7g2ACuaskqpnl0mrwlHFz3SS98PgW\neckdv/zgNGAVl5ZcDEeIe47ExcFS1pPLIGYWK/MX5LD9bCalS5hsyKUh+SyRhV3Z\nd3Ob2xFQoqv6RfvsGtnkSu9TkjXKogEbBaOPmU8MovvmlYzrmFjrCpCnAoGARxXJ\n5fpSPhumy2Q6T1EKeHGSt8mPIS2/twwTO9hWrin0//clzUOnM5dQiMpUjEAX/Bah\nB3Z5gGMiCWugYWh3NWZQB/JKvpTiGC+sqltDlUwKigoHuarJyJlh0pAVjdJG/M3O\nk7adgxBbDECy7FoQzOOhikpu/4tYzQycF0qaH8ECgYEA1fiekhvGPi5gDiBlfV2g\nLYYV5h1B+I4G72UleTq3qSqxLoSJqBBRdNGnrUKkIKJDkKwlMuttUHiUYNILkbEz\n8PohmMlPwYaoT8Ogiv63eYSJeKZd7V3zaw+OrfZZI+2VxToCmKluZtQgxYWZk4UG\nKnUZ45sMbRcASipqf8gyCN8=\n-----END PRIVATE KEY-----`;
+const SHEET_ID     = process.env.GOOGLE_SHEET_ID;
+const CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
+const PRIVATE_KEY  = (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n');
 
 async function feedbackHandler(req, res) {
   const { rating, feedback, caseTitle } = req.body;
